@@ -26,3 +26,5 @@ Tools: `create_handoff`, `validate_handoff`, `merge_handoff`.
 By default a record names its verification method: `BINGO STAR verify v1` (link included). It is included in the receipt hash, so the receipt states which method stood behind the score. It is optional. Use `--no-provenance` or `include_provenance:false`, or substitute your own method. Nothing is sent anywhere: no telemetry or network calls.
 
 MIT licensed. See SPEC.md.
+
+<!-- mcp-name: io.github.pmaxx2023/handoff-kit -->
