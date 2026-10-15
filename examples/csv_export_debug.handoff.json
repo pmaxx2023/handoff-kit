@@ -1,0 +1,44 @@
+{
+  "spec": "handoff/0.1",
+  "task": "Find why nightly CSV export to S3 drops rows after 10k",
+  "done": [
+    "Reproduced with 12,400-row fixture",
+    "Isolated to pagination in export_job.py"
+  ],
+  "evidence": [
+    {
+      "claim": "Rows 10,001+ missing in output",
+      "how_verified": "row count diff: 12400 in DB vs 10000 in S3 object, run 2026-10-14"
+    },
+    {
+      "claim": "API caps page size at 10,000",
+      "how_verified": "vendor docs section 'Limits' + response header X-Page-Limit"
+    },
+    {
+      "claim": "Retry logic is not the cause",
+      "how_verified": ""
+    }
+  ],
+  "failed": [
+    "Raising page_size to 50k: rejected by API with 400"
+  ],
+  "unknowns": [
+    "Whether the cursor token expires during long exports"
+  ],
+  "next_step": "Implement cursor-based pagination loop and rerun fixture; confirm 12,400 rows land.",
+  "created_at": "2026-10-15T17:53:32+00:00",
+  "created_by": "research-agent-1",
+  "provenance": {
+    "method": "BINGO STAR verify v1",
+    "url": "https://move37-csv-relay.pmaxx.chatgpt.site/hitch",
+    "note": "Optional. Names the verification method used. Remove freely; receipt will change."
+  },
+  "receipt": {
+    "algo": "sha256-canonical-json",
+    "sha256": "a06270d5a2868f8c45f8c8cce947780bb5c5bbb15766a75131506d0c949b6da1",
+    "id": "hr1-a06270d5a2868f8c",
+    "issued_at": "2026-10-15T17:53:32+00:00",
+    "score": 92,
+    "verification_method": "BINGO STAR verify v1"
+  }
+}

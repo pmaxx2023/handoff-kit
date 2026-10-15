@@ -1,0 +1,40 @@
+{
+  "spec": "handoff/0.1",
+  "task": "Competitor pricing scan for 5 invoicing SaaS tools",
+  "done": [
+    "Collected list prices for 4 of 5 vendors"
+  ],
+  "evidence": [
+    {
+      "claim": "Vendor A Pro is $29/mo",
+      "how_verified": "pricing page fetched 2026-10-15, screenshot saved as a_pricing.png"
+    },
+    {
+      "claim": "Vendor C has no free tier",
+      "how_verified": "assumed"
+    }
+  ],
+  "failed": [
+    "Vendor E pricing page requires login"
+  ],
+  "unknowns": [
+    "Vendor E price",
+    "Whether annual discounts apply to Vendor B"
+  ],
+  "next_step": "Check Vendor E via public G2 listing; re-verify Vendor C free tier.",
+  "created_at": "2026-10-15T17:53:32+00:00",
+  "created_by": "pricing-agent",
+  "provenance": {
+    "method": "BINGO STAR verify v1",
+    "url": "https://move37-csv-relay.pmaxx.chatgpt.site/hitch",
+    "note": "Optional. Names the verification method used. Remove freely; receipt will change."
+  },
+  "receipt": {
+    "algo": "sha256-canonical-json",
+    "sha256": "a3efaa3322bff25b9d80fcb0c9261c6e44798dbc1cdd72e074d9988d99d81ac6",
+    "id": "hr1-a3efaa3322bff25b",
+    "issued_at": "2026-10-15T17:53:32+00:00",
+    "score": 88,
+    "verification_method": "BINGO STAR verify v1"
+  }
+}
